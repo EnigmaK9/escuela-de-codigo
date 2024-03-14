@@ -1,0 +1,14 @@
+|   Partes de una página web    |
+6 partes principales de una página web: 
+Header
+nav
+section
+main -- importante, va del lado derecho como se ve
+figure
+footer -- va el pie de página, donde agregamos redes sociales y una ubicación. Correos electrónicos y demás. Tenemos índice, cuerpo.
+Contenido dentro del cuerpo. Vamos a tener cada una de estas partes. Agregamos una barra de navegación como le hicimos con el índice
+Agregamos una barra de navegación
+como se ve finalizando un css y un html
+===============================
+Lo divido por secciones, para que sea más fácil entender.
+Las imagenes que tienen un pie de imagenes

@@ -1,123 +1,121 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Escuela de código PILARES</title>
+    <link rel="stylesheet" href="index.css">
+    <title>Tango Club</title>
 </head>
 <body style="background-color: lavender;">
     <header>
-        <h1 style="text-decoration: line-through;">Hello darkness my old friend</h1>
+        <h1>Tango Club</h1>
     </header>
-<!-- Navigation -->
-<nav class="w3-bar w3-black">
-    <a href="#home" class="w3-button w3-bar-item">Inicio</a>
-    <a href="#band" class="w3-button w3-bar-item">Banda</a>
-    <a href="#tour" class="w3-button w3-bar-item">Tour</a>
-    <a href="#contact" class="w3-button w3-bar-item">Contacto</a>
-  </nav>
+    <!-- Navigation -->
+    <nav class="w3-bar w3-black">
+        <a href="#home" class="w3-button w3-bar-item">Inicio</a>
+        <a href="#eventos" class="w3-button w3-bar-item">Eventos</a>
+        <a href="#clases" class="w3-button w3-bar-item">Clases</a>
+        <a href="#tipos" class="w3-button w3-bar-item">Tipos de tango</a>
+        <a href="#contacto" class="w3-button w3-bar-item">Contacto</a>
+    </nav>
 
-<main>
-    Este es el main
-</main>
+    <main>
+        <section>
+            <h2>Bienvenidos al mundo del tango</h2>
+            <p>
+                Disfruta de la pasión y el ritmo del tango argentino. Aprende a bailar con nuestras clases profesionales
+                y participa en nuestros eventos llenos de emoción y elegancia.
+            </p>
+        </section>
 
-    <section>
-        <h2>Bienvenidos al Mundo de la Codificación</h2>
-        <p>
-            Utilizaremos entidades de carácter para mostrar código en la pantalla. Por ejemplo, &lt; se usa para < y &gt; para >. 
-            Aquí hay algunos ejemplos de cómo usar HTML para formatear texto:
-        </p>
+        <section id="eventos">
+            <h2>Próximos eventos</h2>
+            <ul>
+                <li>Milonga de Gala - 15 de abril, 20:00</li>
+                <li>Noche de Tango en Vivo - 22 de abril, 19:30</li>
+                <li>Festival de Tango - 30 de abril, 18:00</li>
+            </ul>
+        </section>
+
+        <section id="clases">
+            <h2>Clases de tango</h2>
+            <p>
+                Nuestras clases están diseñadas para todos los niveles, desde principiantes hasta avanzados. Aprende los
+                fundamentos del tango y mejora tu técnica con nuestros experimentados instructores.
+            </p>
+        </section>
         
-        <p>&lt;strong&gt; <strong>Texto en negrita</strong><br>
-           &lt;em&gt; <em>Texto en cursiva</em><br>
-           &lt;ins&gt; <ins>Texto subrayado</ins><br>
-           &lt;del&gt; <del>Texto tachado</del><br>
-           &lt;code&gt; <code>Texto estilo código</code><br>
-           &lt;span style="color: green;"&gt;<span style="color: green;">Texto en color verde</span><br>
-           &lt;br /&gt; para un salto de línea<br>
-           &lt;p&gt; para un párrafo<br>
-           <!-- Ejemplo de comentario: &lt;!– Esto es un comentario –&gt; -->
-           &lt;hr /&gt; para insertar una línea horizontal<br>
-        </p>
-<figure>
-        <p>
-           Ejemplo de imagen: &lt;img src="URL" alt="descripción"&gt; <br>
-           <img src="image.jpeg" alt="Imagen generada por Dall-e">
-           <figcaption>Una imagen de un vato en un escritorio y un cohete.</figcaption>
-        </p>
-</figure>
+        <section id="tipos">
+            <h1>Tipos de Tango</h1>
+    <table>
+        <tr>
+            <th>Estilo</th>
+            <th>Descripción</th>
+            <th>Origen</th>
+        </tr>
+        <tr>
+            <td>Tango Salón</td>
+            <td>Estilo tradicional de tango social, enfocado en la conexión entre los bailarines en la pista de baile.</td>
+            <td>Buenos Aires, Argentina</td>
+        </tr>
+        <tr>
+            <td>Tango Escenario</td>
+            <td>Estilo espectacular de tango, con movimientos acrobáticos y coreografías elaboradas.</td>
+            <td>Internacional</td>
+        </tr>
+        <tr>
+            <td>Tango Milonguero</td>
+            <td>Estilo íntimo de tango, centrado en la improvisación y la conexión emocional entre los bailarines.</td>
+            <td>Buenos Aires, Argentina</td>
+        </tr>
+        <tr>
+            <td>Tango Nuevo</td>
+            <td>Estilo innovador de tango, que incorpora elementos de otros estilos de baile y música electrónica.</td>
+            <td>Buenos Aires, Argentina</td>
+        </tr>
+        <tr>
+            <td>Tango Canyengue</td>
+            <td>Estilo de tango tradicional, con movimientos más simples y cercanos al suelo.</td>
+            <td>Buenos Aires, Argentina</td>
+        </tr>
+        <tr>
+            <td>Tango Orillero</td>
+            <td>Versión más rebelde y callejera del tango, originada en los barrios marginales de Buenos Aires.</td>
+            <td>Buenos Aires, Argentina</td>
+        </tr>
+        <tr>
+            <td>Tango de Salón con variación</td>
+            <td>Estilo de tango salón con variaciones en pasos y figuras, manteniendo la elegancia y conexión.</td>
+            <td>Buenos Aires, Argentina</td>
+        </tr>
+    </table>
+        </section>
 
-<video width="320" height="240" autoplay muted>
-    <source src="https://www.youtube.com/watch?v=qrhvPsQU1dQ" type="video/mp4">
-    <source src="movie.ogg" type="video/ogg">
-    Your browser does not support the video tag.
-</video>
-
-<iframe src="http://www.youtube.com/embed/W7qWa52k-nE"
-width="560" height="315" frameborder="0" allowfullscreen>
-</iframe>
-    
-</section>
-    <section>
-        <h2>Listas en HTML</h2>
-        <h3>Lista desordenada</h3>
-        <ul>
-            <li>Elemento 1</li>
-            <li>Elemento 2</li>
-            <li>Elemento 3</li>
-        </ul>
-
-        <h3>Lista ordenada</h3>
-        <ol>
-            <li>Primer elemento</li>
-            <li>Segundo elemento</li>
-            <li>Tercer elemento</li>
-        </ol>
-
-        <h2>Tabla en HTML</h2>
-        <table border="2">
-            <caption>
-            <font size ="4" color="red"> Título de la tabla
-            </font> </caption>
-            <tr>
-                <th>Encabezado 1</th>
-                <th>Encabezado 2</th>
-            </tr>
-            <tr>
-                <td>Dato 1</td>
-                <td>Dato 2</td>
-            </tr>
-            <tr>
-                <td>Dato 3</td>
-                <td>Dato 4</td>
-            </tr>
-        </table>
-
-        <h2>Enlaces en HTML</h2>
-        <a href="https://www.example.com">Visita nuestro sitio web</a>
-
-        <h2>Iframe en HTML</h2>
-        <iframe src="https://www.example.com" width="600" height="400"></iframe>
-
-        <h2>Formulario en HTML</h2>
-        <form action="/submit_form" method="post">
-            <label for="fname">Nombre:</label><br>
-            <input type="text" id="fname" name="fname"><br>
-            <label for="lname">Apellido:</label><br>
-            <input type="text" id="lname" name="lname"><br><br>
-            <input type="submit" value="Enviar">
-        </form>
-    </section>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>
+                ¿Tienes alguna pregunta o quieres más información sobre nuestras clases y eventos? Contáctanos a través
+                del siguiente formulario:
+            </p>
+            <form action="/submit_form" method="post">
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre"><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+    </main>
 
     <!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
-    <a href="#"><i class="fa fa-facebook-official"></i></a>
-    <a href="#"><i class="fa fa-pinterest-p"></i></a>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-    <a href="#"><i class="fa fa-flickr"></i></a>
-    <a href="#"><i class="fa fa-linkedin"></i></a>
-    <p class="w3-medium">
-    Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
-    </p>
-    <h4><strong><em>This is the end!</em></strong></h4>
+    <footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+        <a href="#"><i class="fa fa-facebook-official"></i></a>
+        <a href="#"><i class="fa fa-pinterest-p"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-flickr"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <p class="w3-medium">
+        Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+        </p>
+        <h4><strong><em>¡Siente el ritmo del tango!</em></strong></h4>
     </footer>
 
 </body>

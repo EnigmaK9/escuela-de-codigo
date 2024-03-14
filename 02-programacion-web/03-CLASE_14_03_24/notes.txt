@@ -12,3 +12,4 @@ como se ve finalizando un css y un html
 ===============================
 Lo divido por secciones, para que sea más fácil entender.
 Las imagenes que tienen un pie de imagenes
+Las modificaciones se hicieron en el otro HTML

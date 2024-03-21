@@ -101,6 +101,9 @@
             <label for="email">Email:</label><br>
             <input type="email" id="email" name="email"><br><br>
 
+            <label for="contrasena">Contraseña:</label><br>
+            <input type="password" id="contrasena" name="contrasena"><br><br>
+
             <label for="sexo">Sexo:</label><br>
             <select id="sexo" name="sexo">
                 <option value="masculino">Masculino</option>
@@ -109,15 +112,18 @@
             </select><br><br>
 
             <label for="vehiculo">Vehículo:</label><br>
-            <input type="radio" id="carro" name="vehiculo" value="carro">
-            <label for="carro">Carro</label><br>
-            <input type="radio" id="moto" name="vehiculo" value="moto">
-            <label for="moto">Moto</label><br>
-            <input type="radio" id="bici" name="vehiculo" value="bici">
-            <label for="bici">Bicicleta</label><br><br>
+            <select id="vehiculo" name="vehiculo">
+            <option value="carro">Carro</option>
+            <option value="moto">Moto</option>
+            <option value="bici">Bicicleta</option>
+            </select><br><br>
 
-            <input type="submit" value="Enviar">
-            <input type="reset" value="Reiniciar">
+            <label for="comentarios">Comentarios:</label><br>
+            <textarea id="comentarios" name="comentarios" cols="30" rows="5"></textarea><br><br>
+
+
+            <input type="submit" value="Submit Query">
+            <input type="reset" value="Reset">
         </form>
     </section>
 </main>
@@ -137,4 +143,5 @@
 
 </body>
 </html>
+
 

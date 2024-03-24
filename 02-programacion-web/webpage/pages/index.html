@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tango Club</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body style="background-color: lavender;">
+
+<header>
+    <h1>Tango Club</h1>
+</header>
+
+<!-- Navigation -->
+<nav class="w3-bar w3-black">
+    <a href="#home" class="w3-button w3-bar-item">Inicio</a>
+    <a href="#eventos" class="w3-button w3-bar-item">Eventos</a>
+    <a href="#clases" class="w3-button w3-bar-item">Clases</a>
+    <a href="#tipos" class="w3-button w3-bar-item">Tipos de tango</a>
+    <a href="#contacto" class="w3-button w3-bar-item">Contacto</a>
+</nav>
+
+<main>
+    <section>
+        <h2>Bienvenidos al mundo del tango</h2>
+        <p>
+            Disfruta de la pasión y el ritmo del tango argentino. Aprende a bailar con nuestras clases profesionales
+            y participa en nuestros eventos llenos de emoción y elegancia.
+        </p>
+    </section>
+
+    <section id="eventos">
+        <h2>Próximos eventos</h2>
+        <ul>
+            <li>Milonga de Gala - 15 de abril, 20:00</li>
+            <li>Noche de Tango en Vivo - 22 de abril, 19:30</li>
+            <li>Festival de Tango - 30 de abril, 18:00</li>
+        </ul>
+    </section>
+
+    <section id="clases">
+        <h2>Clases de tango</h2>
+        <p>
+            Nuestras clases están diseñadas para todos los niveles, desde principiantes hasta avanzados. Aprende los
+            fundamentos del tango y mejora tu técnica con nuestros experimentados instructores.
+        </p>
+    </section>
+
+    <section id="tipos">
+        <h2>Tipos de Tango</h2>
+        <table cellspacing="10" cellpadding="10">
+            <tr>
+                <th>Estilo</th>
+                <th>Descripción</th>
+                <th>Origen</th>
+            </tr>
+            <tr>
+                <td>Tango Salón</td>
+                <td>Estilo tradicional de tango social, enfocado en la conexión entre los bailarines en la pista de baile.</td>
+                <td rowspan="2">Buenos Aires, Argentina</td>
+            </tr>
+            <tr>
+                <td>Tango Escenario</td>
+                <td>Estilo espectacular de tango, con movimientos acrobáticos y coreografías elaboradas.</td>
+            </tr>
+            <tr>
+                <td>Tango Milonguero</td>
+                <td>Estilo íntimo de tango, centrado en la improvisación y la conexión emocional entre los bailarines.</td>
+                <td>Buenos Aires, Argentina</td>
+            </tr>
+            <tr>
+                <td>Tango Nuevo</td>
+                <td colspan="2">Estilo innovador de tango, que incorpora elementos de otros estilos de baile y música electrónica.</td>
+            </tr>
+            <tr>
+                <td>Tango Canyengue</td>
+                <td colspan="2">Estilo de tango tradicional, con movimientos más simples y cercanos al suelo.</td>
+            </tr>
+            <tr>
+                <td>Tango Orillero</td>
+                <td colspan="2">Versión más rebelde y callejera del tango, originada en los barrios marginales de Buenos Aires.</td>
+            </tr>
+            <tr>
+                <td>Tango de Salón con variación</td>
+                <td colspan="2">Estilo de tango salón con variaciones en pasos y figuras, manteniendo la elegancia y conexión.</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>
+            ¿Tienes alguna pregunta o quieres más información sobre nuestras clases y eventos? Contáctanos a través
+            del siguiente formulario:
+        </p>
+        <form action="/submit_form" method="post">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre"><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+
+            <label for="contrasena">Contraseña:</label><br>
+            <input type="password" id="contrasena" name="contrasena"><br><br>
+
+            <label for="sexo">Sexo:</label><br>
+            <select id="sexo" name="sexo">
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+            </select><br><br>
+
+            <label for="vehiculo">Vehículo:</label><br>
+            <select id="vehiculo" name="vehiculo">
+            <option value="carro">Carro</option>
+            <option value="moto">Moto</option>
+            <option value="bici">Bicicleta</option>
+            </select><br><br>
+
+            <label for="comentarios">Comentarios:</label><br>
+            <textarea id="comentarios" name="comentarios" cols="30" rows="5"></textarea><br><br>
+
+
+            <input type="submit" value="Submit Query">
+            <input type="reset" value="Reset">
+        </form>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+    <a href="#"><i class="fa fa-facebook-official"></i></a>
+    <a href="#"><i class="fa fa-pinterest-p"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-flickr"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <p class="w3-medium">
+        Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+    </p>
+    <h4><strong><em>¡Siente el ritmo del tango!</em></strong></h4>
+</footer>
+
+</body>
+</html>
+
+

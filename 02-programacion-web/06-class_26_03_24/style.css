@@ -68,8 +68,11 @@ aside {
 }
 
 footer {
-    background: transparent;
-    color: #000000;
+    background: black;
+    color: white;
+    padding: 20px;
+    font-size: .7em;
+    line-height: 1.0;
     text-align: center;
     position: fixed;
     bottom: 0;

@@ -59,13 +59,64 @@ h2 {
 p {
     margin-bottom: 10px;
 }
-
 aside {
-    background: #333;
-    color: #fff;
-    padding: 10px;
-    margin: 10px 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
 }
+
+aside h3 {
+    color: #333;
+    font-size: 1.2em;
+}
+
+aside p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #666;
+}
+
+fieldset {
+    border: 2px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+legend {
+    padding: 0 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #444;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    font-size: 0.95em;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+input[type="submit"] {
+    background-color: #5c6bc0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #3f51b5;
+}
+
 
 footer {
     background: black;

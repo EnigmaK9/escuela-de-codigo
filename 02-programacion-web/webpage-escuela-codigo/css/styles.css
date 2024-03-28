@@ -1,13 +1,115 @@
-body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; }
-.header { background: url('../img/hero.jpg') no-repeat center center; background-size: cover; position: relative; }
-.header::before { content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: url('../img/hero-vector.png') no-repeat center center; opacity: 0.5; }
-.logo { max-width: 200px; position: absolute; top: 10px; left: 20px; }
-.nav { display: flex; justify-content: center; background: #f8f8f8; padding: 10px 0; }
-.nav a { text-decoration: none; color: #333; margin: 0 15px; font-weight: bold; }
-.nav a:hover { color: #007bff; }
-.main-content { padding: 20px; }
-.inscription { background-color: #007bff; color: white; padding: 10px; text-align: center; }
-.inscription p { margin: 10px 0; }
-h1 { font-family: 'Verdana', sans-serif; color: white; text-shadow: 1px 1px 2px black; }
-h2 { color: gold; }
-p strong { font-weight: bold; }
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Agrega un color de fondo para asegurarse de que el texto sea legible */
+  }
+  
+  .header {
+    background: url('../img/hero.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('../img/hero-vector.png') no-repeat center center;
+    opacity: 0.5;
+  }
+
+  .header-content {
+    position: relative; /* Contenedor relativo para posicionar los títulos */
+  }
+  
+  .header-content h3 {
+    text-align: left; /* Alinea h3 a la izquierda */
+    margin-left: 20px; /* Añade margen izquierdo */
+    margin-bottom: 0; /* Evita espacio extra debajo del h3 */
+  }
+  
+  .header-content h2 {
+    text-align: left; /* Alinea h2 a la izquierda */
+    margin-left: 20px; /* Añade margen izquierdo */
+    font-size: 1.5em; /* Tamaño menor para h2, ajusta como necesites */
+    margin-bottom: 0; /* Evita espacio extra debajo del h2 */
+  }
+  
+  .header-content h1 {
+    text-align: center; /* Centra h1 */
+    font-size: 4em; /* Tamaño grande para h1 */
+    margin-top: 0; /* Evita espacio extra encima del h1 */
+  }
+  
+  .logo {
+    max-width: 200px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos de navegación a la derecha */
+    padding: 10px 20px; /* Espaciado interior, ajusta según sea necesario */
+    background-color: #f8f8f8; /* Color de fondo para el nav, asegurándose de que sea diferente del texto */
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #333; /* Asegúrate de que el color contraste con el fondo */
+    margin: 0 15px;
+    font-weight: bold;
+  }
+  
+  .nav a:hover {
+    color: #007bff;
+  }
+  
+  .main-content {
+    padding: 20px;
+  }
+  
+  .inscription {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .inscription p {
+    margin: 10px 0;
+  }
+  
+  h1 {
+    font-family: 'Verdana', sans-serif;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+  }
+  
+  h2 {
+    font-family: 'Verdana', sans-serif;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+  }
+
+  h3 {
+    font-family: 'Verdana', sans-serif;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+  }
+
+  h4 {
+    font-family: 'Verdana', sans-serif;
+    color: gold;
+    text-shadow: 1px 1px 2px black;
+  }
+  
+  p strong {
+    font-weight: bold;
+  }
+  

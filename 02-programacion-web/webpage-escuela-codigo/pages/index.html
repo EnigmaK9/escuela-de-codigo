@@ -6,7 +6,9 @@
 <title>Escuela de Código</title>
 <style>
   body { font-family: 'Arial', sans-serif; }
-  .header { background: #f8f8f8; padding: 20px; text-align: center; }
+  .header { background: url('banner-background.jpg') no-repeat center center; background-size: cover; padding: 20px; text-align: center; position: relative; }
+  .header::before { content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: url('white-vector.png') no-repeat center center; opacity: 0.5; }
+  .logo { max-width: 200px; margin-top: 20px; }
   .main-content { padding: 20px; }
   .inscription { background-color: #007bff; color: white; padding: 10px; text-align: center; }
   .inscription p { margin: 10px 0; }
@@ -15,8 +17,9 @@
 <body>
 
 <div class="header">
+  <img src="logo.png" alt="Logo de la Escuela de Código" class="logo">
   <h1>Aprende a Programar</h1>
-  <p>En las Escuelas de Código de la Ciudad de México</p>
+  <p>En las Escuelas de Código de la Ciudad</p>
 </div>
 
 <div class="main-content">
@@ -31,3 +34,4 @@
 
 </body>
 </html>
+a

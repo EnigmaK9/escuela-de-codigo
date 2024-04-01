@@ -4,7 +4,8 @@ body {
     padding: 0;
     background-color: #fff; /* Agrega un color de fondo para asegurarse de que el texto sea legible */
   }
-  
+
+
   .header {
     background: url('../img/hero.jpg') no-repeat center center;
     background-size: cover;

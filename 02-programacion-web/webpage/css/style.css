@@ -23,6 +23,18 @@ header h1 {
     margin: 0;
 }
 
+nav {
+    background: #cccccc;
+    padding: 5px 15px;
+}
+
+li{
+    display: inline-block;
+    list-style: none;
+    padding: 5px;
+    font: bold 19px verdana;
+}
+
 nav ul {
     background: #333;
     list-style: none;

@@ -45,18 +45,17 @@ header {
 }
 
 .logo-container img {
-    height: 50px; /* Ajusta esto según el tamaño de tu logo */
-    align-items: left;
-    justify-content: left;
-    float: left;
+    height: 40px; /* Ajusta esto según el tamaño de tu logo */
+    float: left; /* Alinea los logos a la derecha */
 }
+
 .logo-container-nav img {
-    height: 25px; /* Ajusta esto según el tamaño de tu logo */
-    float: right; /* Esto alinea tus imágenes a la derecha */
+    height: 25px; /*  Adjust it according to your logo size */
+    float: right; /* Align images to the right */
 }
 
 .logo-container-small img {
-    height: 25px; /* Ajusta esto según el tamaño de tu logo */
+    height: 25px; /*  Adjust it according to your logo size */
     float: left;
     justify-content: left;
 }

@@ -4,7 +4,9 @@ body {
     padding: 0;
     background-color: #fff; /* Agrega un color de fondo para asegurarse de que el texto sea legible */
   }
-
+  .centrado {
+    text-align: center;
+  }
 
   .header {
     background: url('../img/hero.jpg') no-repeat center center;
@@ -45,7 +47,14 @@ body {
     font-size: 4em; /* Tamaño grande para h1 */
     margin-top: 0; /* Evita espacio extra encima del h1 */
   }
-  
+    
+  .inscription {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+
   .logo {
     max-width: 200px;
     position: absolute;
@@ -74,13 +83,12 @@ body {
   .main-content {
     padding: 20px;
   }
-  
-  .inscription {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    text-align: center;
+  .top-logo {
+    text-align: center; /* Centra el logo si así lo deseas */
+    margin-top: 0;
+    margin-bottom: 20px; /* Ajusta el espacio debajo del logo según necesites */
   }
+
   
   .inscription p {
     margin: 10px 0;
@@ -113,4 +121,6 @@ body {
   p strong {
     font-weight: bold;
   }
-  
+  .centrado {
+  text-align: center;
+}

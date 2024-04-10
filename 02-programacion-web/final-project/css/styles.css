@@ -1,0 +1,202 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Cabecera */
+header {
+    /* Estilos para la cabecera */
+}
+.libros {
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.book-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.book {
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+}
+
+.book img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.book h3,
+.book p {
+    margin: 5px 0;
+}
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #f8f8f8;
+}
+
+.logo-container img {
+    height: 50px; /* Ajusta esto según el tamaño de tu logo */
+}
+
+.search-bar form {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Barra de navegación */
+nav {
+    /* Estilos para la barra de navegación */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav li {
+    padding: 10px 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Banner */
+.banner {
+    background-image: url('../img/banner.webp');
+    background-size: cover;
+    background-position: center;
+    height: 600px; /* Altura del banner */
+    width: 100%; /* El ancho se ajusta al 100% del contenedor padre */
+    display: flex;
+    align-items: center; /* Centra el contenido del banner verticalmente */
+    justify-content: center; /* Centra el contenido del banner horizontalmente */
+}
+
+.banner-content h1 {
+    color: white;
+    font-size: 4em; /* Tamaño de la fuente del título del banner */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Sombra de texto para hacerlo legible */
+    margin: 0; /* Elimina los márgenes por defecto del h1 */
+}
+
+/* Sección de recomendaciones */
+.recomendaciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.recomendaciones .book {
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+}
+
+.recomendaciones .book img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.recomendaciones h3 {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+.recomendaciones p {
+    font-size: 0.8em;
+}
+
+.recomendaciones a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+/* Pie de página */
+.site-footer {
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-information,
+.footer-subscription,
+.footer-rights {
+    margin-bottom: 20px;
+}
+
+.footer-information p,
+.footer-rights p {
+    margin: 0;
+    color: #333;
+}
+
+.footer-subscription h4 {
+    margin-bottom: 10px;
+}
+
+.footer-subscription form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-subscription input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.footer-subscription button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .main-nav ul {
+        flex-direction: column;
+    }
+
+    .footer-subscription form {
+        flex-direction: column;
+    }
+}

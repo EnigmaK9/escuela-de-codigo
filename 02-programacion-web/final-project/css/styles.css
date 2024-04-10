@@ -2,40 +2,43 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-/* Cabecera */
+/* Header */
 header {
-    /* Estilos para la cabecera */
+    /* header style*/
 }
-.libros {
-    padding: 20px;
-    background-color: #f8f8f8;
-}
-
-.book-container {
+.libros .book-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
 }
 
-.book {
-    width: 200px;
-    margin: 10px;
+.libros .book {
+    flex: 0 0 auto;
+    width: 50px; /* Ancho fijo para cada libro, puedes ajustar según necesites */
+    scroll-snap-align: start;
+    transition: transform 450ms ease-in-out;
+}
+
+/* Opcional: Estilos para hacer que se vea mejor */
+.libros h2 {
     text-align: center;
 }
 
-.book img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+.libros .book img {
+    max-width: 50%; /* La imagen ocupa como máximo el 100% del ancho del contenedor */
+    height: 50%; /* La altura se ajusta automáticamente para mantener la proporción */
+    display: block;
+    margin: 0 auto;
 }
 
 .book h3,
 .book p {
     margin: 5px 0;
 }
+
 .site-header {
     display: flex;
-    justify-content: space-between;
+    justify-content:right;
     align-items: center;
     padding: 10px 20px;
     background: #f8f8f8;
@@ -43,6 +46,43 @@ header {
 
 .logo-container img {
     height: 50px; /* Ajusta esto según el tamaño de tu logo */
+    align-items: left;
+    justify-content: left;
+    float: left;
+}
+.logo-container-nav img {
+    height: 25px; /* Ajusta esto según el tamaño de tu logo */
+    float: right; /* Esto alinea tus imágenes a la derecha */
+}
+
+.logo-container-small img {
+    height: 25px; /* Ajusta esto según el tamaño de tu logo */
+    float: left;
+    justify-content: left;
+}
+
+.libros .book-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.libros .book {
+    flex: 0 0 auto;
+    width: 50%; /* Ajusta el ancho según necesites */
+    scroll-snap-align: start;
+    transition: transform 450ms ease-in-out;
+}
+
+/* Opcional: Estilos para hacer que se vea mejor */
+.libros h2 {
+    text-align: center;
+}
+
+.libros .book img {
+    max-width: 50%;
+    display: block;
+    margin: 0 auto;
 }
 
 .search-bar form {
@@ -149,7 +189,7 @@ nav {
 .site-footer {
     background-color: #f8f8f8;
     padding: 20px 0;
-    text-align: center;
+    text-align: left;
 }
 
 .footer-information,
@@ -158,10 +198,17 @@ nav {
     margin-bottom: 20px;
 }
 
-.footer-information p,
-.footer-rights p {
+.footer-information p {
     margin: 0;
     color: #333;
+    justify-content: left;
+    text-align: left;
+}
+.footer-rights p{
+    margin: 0;
+    color: #333;
+    justify-content: center;
+    text-align: center;
 }
 
 .footer-subscription h4 {

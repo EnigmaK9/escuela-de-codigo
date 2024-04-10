@@ -7,10 +7,21 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
+    
     <header class="site-header">
         <div class="logo-container">
             <a href="#inicio">
                 <img src="../img/boundless-logo.webp" alt="Logo de Boundless Narratives Bookstore">
+            </a>
+        </div>
+        <div class="logo-container-nav">
+            <a href="#inicio">
+                <img src="../img/icons/user-icon.png" alt="gender neutral user logo">
+            </a>
+        </div>
+        <div class="logo-container-nav">
+            <a href="#inicio">
+                <img src="../img/icons/like-icon.png" alt="heart shape logo">
             </a>
         </div>
         <div class="search-bar">
@@ -19,6 +30,7 @@
                 <button type="submit">Search</button>
             </form>
         </div>
+
     </header>
     
     <nav class="main-nav">
@@ -102,12 +114,15 @@
                 <p>$8.99</p>
             </div>
         </div>
+        <button class="prev">←</button>
+        <button class="next">→</button>
+
     </section>
     
     <section class="about-us" id="about">
         <h2>About Us</h2>
         <p>Welcome to Boundless Narratives Bookstore, your number one source for all things books. We're dedicated to giving you the very best of literature, with a focus on variety, customer service, and uniqueness.</p>
-        <p>Founded in 2024 by Carlos Padilla, Boundless Narratives Bookstore has come a long way from its beginnings in Imagin☺ary City. When Carlos Padilla first started out, his passion for books drove them to start his dream of having a bookstore so that Boundless Narratives Bookstore can offer you the finest goods at the lowest prices in imaginary city. We now serve customers all over Neverland, and are thrilled that we're able to turn our passion into our own website.</p>
+        <p>Founded in 2024 by Carlos Padilla, Boundless Narratives Bookstore has come a long way from its beginnings in Imaginary City. When Carlos Padilla first started out, his passion for books drove them to start his dream of having a bookstore so that Boundless Narratives Bookstore can offer you the finest goods at the lowest prices in imaginary city. We now serve customers all over Neverland, and are thrilled that we're able to turn our passion into our own website.</p>
         <p>We hope you enjoy our books as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.</p>
         <p>Sincerely,</p>
         <p>Carlos Padilla</p>
@@ -115,8 +130,20 @@
     <footer class="site-footer">
         <div class="footer-information">
             <p>Boundless Narratives Bookstore</p>
+            <div class="logo-container-small">
+                    <img src="../img/icons/store-location.png" alt="Store location logo">
+                </a>
+            </div>
             <p>123 Fictional Lane, Imaginary City, IC 45678</p>
+            <div class="logo-container-small">
+                <img src="../img/icons/phone-icon.png" alt="Store location logo">
+            </a>
+            </div>
             <p>Phone: +1 234 567 8900</p>
+            <div class="logo-container-small">
+                <img src="../img/icons/email-icon.png" alt="Store location logo">
+            </a>
+            </div>
             <p>Email: contact@boundlessnarratives.com</p>
         </div>
         <div class="footer-subscription">
@@ -131,4 +158,14 @@
         </div>
     </footer>
 </body>
+<script>
+    document.querySelector('.next').addEventListener('click', function() {
+        document.querySelector('.book-container').scrollBy({ left: window.innerWidth, behavior: 'smooth' });
+    });
+    
+    document.querySelector('.prev').addEventListener('click', function() {
+        document.querySelector('.book-container').scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
+    });
+    
+</script>
 </html>

@@ -105,9 +105,9 @@ header {
     border-radius: 5px;
 }
 
-/* Barra de navegación */
+/* navigation bar */
 nav {
-    /* Estilos para la barra de navegación */
+    /* navigation bar styles */
 }
 
 .main-nav ul {
@@ -129,7 +129,7 @@ nav {
 
 /* Banner */
 .banner {
-    background-image: url('../img/banner.webp');
+    background-image: url('../img/banner.jpg');
     background-size: cover;
     background-position: center;
     height: 600px; /* Altura del banner */

@@ -129,7 +129,7 @@ nav {
 
 /* Banner */
 .banner {
-    background-image: url('../img/banner.jpg');
+    background-image: url('../img/banner.webp');
     background-size: cover;
     background-position: center;
     height: 600px; /* Altura del banner */

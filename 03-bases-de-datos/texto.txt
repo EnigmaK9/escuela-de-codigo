@@ -1,0 +1,136 @@
+Es un programa que permite la creación, gestión y administración de las bases de datos, asi como la eleccion y manejo de las estructuras necesarias para el almacenamiento y busqueda de informacion del modmo mas eficiente posible, ademas, hacen posible administrar todo acceso a la base de datos.
+objetivo: es proporcionar una forma de almacenar y recuperar la información de una  manera que sea tanto practica como eficiente
+Funciones principales de un administrado de BDA
+- asegurar el buen funcionamiento de las bd
+- retener informacion de la bd
+- evitar perdida de datos
+- solucionar incidencias y perdida de datos
+- asegurar la seguridad de los datos
+responsabilidades de un sistema de gestor de base de datos
+- instalar
+- configurar
+- gestionar
+- dar soporte al equipo de desarrollo
+- seguridad de la información y redes
+- definir el esquema de diccionario de datos
+- especificar restricciones de integridad para asegurar los datos
+- garantizar la alta disponibilidad de las bases de datos
+# sistemas de información
+- es un conjunto de elementos orientados al tratamiento y administración de datos e información, organizados y listos para asu posterior uso, generados para cubrir una necesidad (objetivo). en terminos sencillos, es la interaccion de personas para procesar e interpretar unos datos.
+## componentes de un sistema de información
+- hardware
+- software
+- data
+- process
+- personal
+# database gestores
+
+RDBM
+
+- mysql
+- sqlite
+- postgresql
+- sql server
+- oracle
+- no dbms
+
+no relacionales
+
+- mongodb
+- redis
+- azuredb
+- cassandra
+- mongodb
+- redis
+
+# sgbd mas usado
+sql es un sistema gestor de base de datos relacionales
+se trata del modelo más utilizado en la actualidad, ya que se basa en establecer relaciones entre los datos gracias a la creación de una tabla aparte aparte por cada 
+95% de los datos son no estructurados (nosql)
+# aplicaciones de los sistemas de bases de datos
+- banca
+- lineas aereas cobol
+- universidades
+- transacciones de tarjetas de credito
+- telecomunicaciones
+- finanzas
+- ventas
+- comercio en linea
+- produccion
+- recursos humanos
+# propositos de los sistemas de bases de datos
+- evita redundancia e inconsistencia de datos
+- evita tener dificultad en el acceso a los datos
+- aislamiento de datos
+# bases de datos relacionales
+- es un tipo de base de datos que almacena y proporciona acceso a puntos de datos relacionados entre si. Las bases de datos relacioens se basan en el modelo relacional, una forma intuitiva y directa de representar datos en tablas.
+- cada fila en una tabla es un registro con una id unica, llamada clave. Las columnas de la tabla contienen los atributos de los y cada registro suele tener un valor para cada atributo, lo que simplifica la creación de relaciones entre los puntos de datos
+- primary key (pk)
+modelo relacional
+- estructura de base de datos
+# modelo E-R
+ es el modelo mas utilizado de BD
+esta formado por un conjunto de conceptos que permiten describir la realidad mediante representaciones graficas y linguisticas
+# entidad
+cualquier tipo de objeto o concepto sobre el que se recoge informacion: cosa, persona, concepto abstracto o suceso
+por ejemplo:
+cars, houses, employers, clients, bussiness, professions, design of product
+-entidad debil, depende de la existencia de otra entidad
+- entidad fuerte es una que no es debil
+# atributos
+# grado y cardinlidad de una asociacion
+# relacion
+
+una empresa vende a varios clientes
+
+clientes
+- nombre
+- apellido
+- dni
+- direccion
+- fecha de nacimiento
+cliente puede comprar varios productos a la empresa
+
+business
+- id
+- name
+- 
+productos peuden ser almacenados por varios proveedores
+mismo producto puede ser comprado por varios clientes
+
+producto
+- nombre
+- codigo
+
+un producto puede ser suministrado por un proveedor
+un proveedor puede suministrar diferentes productos
+de cada proveedor se desea conocer_
+proveedor
+
+dni
+nombre
+apellido
+direccion
+
+se desea automatizar la gestión de una empresa de transporte,
+que reparte paquetes por todo españa
+los encargados de llevar los paquetes
+son los camioneros
+camioneros
+dni
+name
+phone number
+address
+salary
+poblacion en la que viven
+
+de los paquetes transportados, interesa conocer
+paquete
+codigo de paquete
+descripcion
+destinatario
+direccion del destinatario
+direccion del destinatario
+
+un camionero distribuye muchos paquetes
+y un paqute distribuido por un camionero de las provincias

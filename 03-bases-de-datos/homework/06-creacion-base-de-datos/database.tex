@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{a4paper} % Set the page size to A4
+\usepackage{listings} % Package for including code in the document
+
+\title{Práctica 06: Creación de una base de datos}
+\author{Carlos I. Padilla Herrera}
+\date{12 de mayo de 2024}
+
+\lstset{frame=single, % Adds a frame around the code
+        basicstyle=\small\ttfamily, % Use a small, true type font
+        language=SQL, % SQL syntax highlighting
+        showstringspaces=false} % Don't mark spaces in strings
+
+\begin{document}
+
+\maketitle
+
+\section*{Información del Taller}
+\textbf{Taller:} Escuela de código PILARES: Base de datos entre semana \\
+\textbf{Número de la práctica:} 6 \\
+\textbf{Nombre completo:} Padilla Herrera Carlos Ignacio \\
+\textbf{Folio:} 794DR02 \\
+\textbf{Fecha:} 12 de mayo de 2024 \\
+\textbf{Actividad:} Se describen a continuación las instrucciones para la creación de tablas y inserción de datos en una base de datos SQL. Para detalles adicionales, referirse al enlace del curso.
+
+\newpage
+
+\section*{Código SQL para la creación de tablas y inserción de datos}
+
+\begin{lstlisting}
+-- Creating tables
+create table manufacturer (
+    code int(10) primary key,
+    name varchar(100)
+);
+
+create table product (
+    code int(10) primary key,
+    name varchar(100),
+    price double,
+    manufacturer_code int(10),
+    foreign key (manufacturer_code) references manufacturer(code)
+);
+
+-- Inserting manufacturers
+insert into manufacturer (code, name) values
+(1, 'Asus'),
+(2, 'Lenovo'),
+(3, 'Hewlett-Packard'),
+(4, 'Samsung'),
+(5, 'Seagate'),
+(6, 'Crucial'),
+(7, 'Gigabyte'),
+(8, 'Huawei'),
+(9, 'Xiaomi');
+
+-- Inserting products
+insert into product (code, name, price, manufacturer_code) values
+(1, 'Disco Duro SATA3 1TB', 86.99, 5),
+(2, 'Memoria RAM DDR4 8GB', 120, 6),
+(3, 'Disco SSD 1TB', 150.99, 4),
+(4, 'GeForce GTX 1050 Ti', 185, 7),
+(5, 'GeForce GTX 1080 Xtreme', 755, 6),
+(6, 'Monitor 24 LED Full HD', 202, 1),
+(7, 'Monitor 27 LED Full HD', 245.99, 1),
+(8, 'Portátil Yoga 520', 559, 2),
+(9, 'Portátil Ideapad 320', 444, 2),
+(10, 'Impresora HP Deskjet 3720, 59.99, 3)
+(11, 'Impresora HP Laserjet Pro M26nw', 180, 3);
+\end{lstlisting}
+
+\newpage % Inicia una nueva página
+
+\section*{Captura de pantalla}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{screenshot.png} % Asegúrate de poner el nombre correcto del archivo y la extensión
+    \caption{Captura de pantalla de DB Fiddle}
+\end{figure}
+
+
+\end{document}

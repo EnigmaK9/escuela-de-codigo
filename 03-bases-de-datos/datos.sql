@@ -1,5 +1,5 @@
--- Inserting manufacturers
-INSERT INTO Fabricante (codigo, Nombre) VALUES
+-- inserting manufacturers
+insert into manufacturer (code, name) values
 (1, 'Asus'),
 (2, 'Lenovo'),
 (3, 'Hewlett-Packard'),
@@ -10,16 +10,16 @@ INSERT INTO Fabricante (codigo, Nombre) VALUES
 (8, 'Huawei'),
 (9, 'Xiaomi');
 
--- Inserting products
-INSERT INTO Producto (Código, nombre, Precio, Código_fabricante) VALUES
-(1, 'Disco Duro SATA3 1TB', 86.99, 5),
-(2, 'Memoria RAM DDR4 8GB', 120, 6),
-(3, 'Disco SSD 1TB', 150.99, 5),
+-- inserting products
+insert into product (code, name, price, manufacturer_code) values
+(1, '1TB SATA3 Hard Drive', 86.99, 5),
+(2, '8GB DDR4 RAM', 120, 6),
+(3, '1TB SSD', 150.99, 5),
 (4, 'GeForce GTX 1050 Ti', 185, 7),
 (5, 'GeForce GTX 1080 Xtreme', 755, 7),
-(6, 'Monitor 24 LED Full HD', 202, 2),
-(7, 'Monitor 27 LED Full HD', 245.99, 2),
-(8, 'Portátil Yoga 520', 560, 2),
-(9, 'Portátil Ideapad 320', 444, 2),
-(10, 'Impresora HP Deskjet 3720', 50.99, 3),
-(11, 'Impresora HP Laserjet Pro M426nw', 148, 3);
+(6, '24 inch Full HD LED Monitor', 202, 2),
+(7, '27 inch Full HD LED Monitor', 245.99, 2),
+(8, 'Yoga 520 Laptop', 560, 2),
+(9, 'Ideapad 320 Laptop', 444, 2),
+(10, 'HP Deskjet 3720 Printer', 50.99, 3),
+(11, 'HP Laserjet Pro M426nw Printer', 148, 3);

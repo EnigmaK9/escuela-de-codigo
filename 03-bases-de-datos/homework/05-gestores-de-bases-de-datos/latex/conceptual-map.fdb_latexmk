@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1715520303 "/home/enigma/repos/escuela-de-codigo/03-bases-de-datos/homework/05-gestores-de-bases-de-datos/latex/conceptual-map.tex" "conceptual-map.pdf" "conceptual-map" 1715520303 2
+["pdflatex"] 1715522725 "/home/enigma/repos/escuela-de-codigo/03-bases-de-datos/homework/05-gestores-de-bases-de-datos/latex/conceptual-map.tex" "conceptual-map.pdf" "conceptual-map" 1715522726 2
   "/etc/texmf/web2c/texmf.cnf" 1688396872 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/enigma/repos/escuela-de-codigo/03-bases-de-datos/homework/05-gestores-de-bases-de-datos/latex/conceptual-map.tex" 1715507943 4519 c3218c6cffbedc31b2fcf6184e16ae92 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -118,7 +118,7 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1681034085 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1710784454 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1710784490 6505196 7b5daa084bb357a080543578c865fe9f ""
-  "conceptual-map.aux" 1715520303 134 06768825e41f117602e95d7276db0b78 "pdflatex"
+  "conceptual-map.aux" 1715522725 134 06768825e41f117602e95d7276db0b78 "pdflatex"
   "conceptual-map.tex" 1715507943 4519 c3218c6cffbedc31b2fcf6184e16ae92 ""
   (generated)
   "conceptual-map.aux"

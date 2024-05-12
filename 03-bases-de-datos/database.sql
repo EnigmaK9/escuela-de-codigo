@@ -1,12 +1,12 @@
-CREATE TABLE Fabricante (
-    codigo INT(10) PRIMARY KEY,
-    Nombre VARCHAR(100)
+create table manufacturer (
+    code int(10) primary key,
+    name varchar(100)
 );
 
-CREATE TABLE Producto (
-    Código INT(10) PRIMARY KEY,
-    nombre VARCHAR(100),
-    Precio DOUBLE,
-    Código_fabricante INT(10),
-    FOREIGN KEY (Código_fabricante) REFERENCES Fabricante(codigo)
+create table product (
+    code int(10) primary key,
+    name varchar(100),
+    price double,
+    manufacturer_code int(10),
+    foreign key (manufacturer_code) references manufacturer(code)
 );

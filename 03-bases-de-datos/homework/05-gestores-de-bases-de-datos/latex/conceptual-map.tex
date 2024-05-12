@@ -1,33 +1,73 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{landscape} % Set the page orientation to landscape
 \usepackage{tikz}
 \usetikzlibrary{shapes, arrows.meta, positioning}
 
-\title{Taller de Bases de Datos}
+\title{Escuela de Código Pilares}
 \author{Carlos Padilla}
 \date{\today}
 
 \begin{document}
 
 \maketitle
+\newpage % Start a new page for the conceptual map
 
-\section{Mapa Conceptual de Gestores de Bases de Datos}
+\section{Conceptual Map}
 
 \begin{center}
-\begin{tikzpicture}[node distance=2cm and 3cm, auto]
-  \node(Gestores)[rectangle, draw=blue, thick, fill=blue!20, text width=5em, text centered, rounded corners, minimum height=3em] {Gestores};
+\begin{tikzpicture}[node distance=1cm, auto] % Reduced node distance
+  \node (Gestores) [rectangle, draw=blue, thick, fill=blue!30, text width=5em, text centered, minimum height=3em] {Gestores};
 
-  \node (mysql) [rectangle, draw=blue, thick, fill=blue!20, text width=5em, text centered, rounded corners, minimum height=3em] {MySQL};
-  \node (postgres) [rectangle, draw=green, thick, fill=green!20, right=of mysql, text width=5em, text centered, rounded corners, minimum height=3em] {PostgreSQL};
-  \node (mongodb) [rectangle, draw=yellow, thick, fill=yellow!20, right=of postgres, text width=5em, text centered, rounded corners, minimum height=3em] {MongoDB};
+  % Database management nodes
+  \node (mysql) [rectangle, draw=violet, thick, fill=violet!30, below left=3cm and 0.5cm of Gestores, text width=5em, text centered, minimum height=3em] {MySQL};
+  \node (postgres) [rectangle, draw=olive, thick, fill=olive!30, below=3cm of Gestores, text width=5em, text centered, minimum height=3em] {PostgreSQL};
+  \node (mongodb) [rectangle, draw=teal, thick, fill=teal!30, below right=3cm and 0.5cm of Gestores, text width=5em, text centered, minimum height=3em] {MongoDB};
 
-  \node (rdbms) [below= of mysql, text width=10em, text centered] {RDBMS, SQL, Multi-platform};
-  \node (acid) [below= of postgres, text width=10em, text centered] {Full ACID, Extensive Data Types};
-  \node (nosql) [below= of mongodb, text width=10em, text centered] {NoSQL, JSON-like, Replication};
+  % Child nodes for MySQL
+  \node (security) [rectangle, draw=red, thick, fill=red!30, below=of mysql, text width=5em, text centered, minimum height=3em, align=center] {Security\\Systems Integration};
+  \node (cluster) [rectangle, draw=orange, thick, fill=orange!30, below=of security, text width=5em, text centered, minimum height=3em, align=center] {Cluster\\Management Tools};
+  \node (replication) [rectangle, draw=pink, thick, fill=pink!30, below=of cluster, text width=5em, text centered, minimum height=3em, align=center] {Replication\\Strategies};
+  \node (availability) [rectangle, draw=violet, thick, fill=violet!30, below=of replication, text width=5em, text centered, minimum height=3em, align=center] {High\\Availability};
+  \node (partitioning) [rectangle, draw=violet, thick, fill=violet!30, below=of availability, text width=5em, text centered, minimum height=3em, align=center] {Data\\Partitioning};
 
-  \path[-] (mysql) edge (rdbms);
-  \path[-] (postgres) edge (acid);
-  \path[-] (mongodb) edge (nosql);
+  % Child nodes for PostgreSQL
+  \node (performance) [rectangle, draw=cyan, thick, fill=cyan!30, below=of postgres, text width=5em, text centered, minimum height=3em, align=center] {Performance\\Enhancements};
+  \node (backup) [rectangle, draw=purple, thick, fill=purple!30, below=of performance, text width=5em, text centered, minimum height=3em, align=center] {Backup\\Solutions};
+  \node (acid) [rectangle, draw=lime, thick, fill=lime!30, below=of backup, text width=5em, text centered, minimum height=3em, align=center] {ACID\\Compliance};
+  \node (indexing) [rectangle, draw=olive, thick, fill=olive!30, below=of acid, text width=5em, text centered, minimum height=3em, align=center] {Advanced\\Indexing};
+  \node (extensions) [rectangle, draw=olive, thick, fill=olive!30, below=of indexing, text width=5em, text centered, minimum height=3em, align=center] {Database\\Extensions};
+
+  % Child nodes for MongoDB
+  \node (scalability) [rectangle, draw=maroon, thick, fill=maroon!30, below=of mongodb, text width=5em, text centered, minimum height=3em, align=center] {Scalability\\Features};
+  \node (nosql) [rectangle, draw=gray, thick, fill=gray!30, below=of scalability, text width=5em, text centered, minimum height=3em, align=center] {NoSQL\\Data Models};
+  \node (json) [rectangle, draw=yellow, thick, fill=yellow!30, below=of nosql, text width=5em, text centered, minimum height=3em, align=center] {JSON\\Storage Formats};
+  \node (sharding) [rectangle, draw=teal, thick, fill=teal!30, below=of json, text width=5em, text centered, minimum height=3em, align=center] {Sharding\\Techniques};
+  \node (aggregation) [rectangle, draw=teal, thick, fill=teal!30, below=of sharding, text width=5em, text centered, minimum height=3em, align=center] {Data\\Aggregation};
+
+  % Paths
+  \draw[-] (Gestores) -- (mysql);
+  \draw[-] (Gestores) -- (postgres);
+  \draw[-] (Gestores) -- (mongodb);
+
+  \draw[-] (mysql) -- (security);
+  \draw[-] (security) -- (cluster);
+  \draw[-] (cluster) -- (replication);
+  \draw[-] (replication) -- (availability);
+  \draw[-] (availability) -- (partitioning);
+
+  \draw[-] (postgres) -- (performance);
+  \draw[-] (performance) -- (backup);
+  \draw[-] (backup) -- (acid);
+  \draw[-] (acid) -- (indexing);
+  \draw[-] (indexing) -- (extensions);
+
+  \draw[-] (mongodb) -- (scalability);
+  \draw[-] (scalability) -- (nosql);
+  \draw[-] (nosql) -- (json);
+  \draw[-] (json) -- (sharding);
+  \draw[-] (sharding) -- (aggregation);
 \end{tikzpicture}
 \end{center}
 

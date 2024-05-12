@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{landscape} % Set the page orientation to landscape
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows.meta, positioning}
+
+\title{Escuela de Código Pilares}
+\author{Carlos Padilla}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage % Start a new page for the conceptual map
+
+\section{Conceptual Map}
+
+\begin{center}
+\begin{tikzpicture}[node distance=1.5cm and 1.5cm, auto]
+  \node (Gestores) [rectangle, draw=blue, thick, fill=blue!30, text width=5em, text centered, minimum height=3em] {Gestores};
+
+  % Database management nodes
+  \node (mysql) [rectangle, draw=violet, thick, fill=violet!30, below left=of Gestores, text width=5em, text centered, minimum height=3em] {MySQL};
+  \node (postgres) [rectangle, draw=olive, thick, fill=olive!30, below=of Gestores, text width=5em, text centered, minimum height=3em] {PostgreSQL};
+  \node (mongodb) [rectangle, draw=teal, thick, fill=teal!30, below right=of Gestores, text width=5em, text centered, minimum height=3em] {MongoDB};
+
+  % Child nodes for MySQL
+  \node (security) [rectangle, draw=red, thick, fill=red!30, below=of mysql, text width=5em, text centered, minimum height=3em] {Security};
+  \node (cluster) [rectangle, draw=orange, thick, fill=orange!30, below=of security, text width=5em, text centered, minimum height=3em] {Cluster};
+  \node (replication) [rectangle, draw=pink, thick, fill=pink!30, below=of cluster, text width=5em, text centered, minimum height=3em] {Replication};
+
+  % Child nodes for PostgreSQL
+  \node (performance) [rectangle, draw=cyan, thick, fill=cyan!30, below=of postgres, text width=5em, text centered, minimum height=3em] {Performance};
+  \node (backup) [rectangle, draw=purple, thick, fill=purple!30, below=of performance, text width=5em, text centered, minimum height=3em] {Backup};
+  \node (acid) [rectangle, draw=lime, thick, fill=lime!30, below=of backup, text width=5em, text centered, minimum height=3em] {ACID};
+
+  % Child nodes for MongoDB
+  \node (scalability) [rectangle, draw=maroon, thick, fill=maroon!30, below=of mongodb, text width=5em, text centered, minimum height=3em] {Scalability};
+  \node (nosql) [rectangle, draw=gray, thick, fill=gray!30, below=of scalability, text width=5em, text centered, minimum height=3em] {NoSQL};
+  \node (json) [rectangle, draw=yellow, thick, fill=yellow!30, below=of nosql, text width=5em, text centered, minimum height=3em] {JSON};
+
+  % Paths
+  \draw[-] (Gestores) -- (mysql);
+  \draw[-] (Gestores) -- (postgres);
+  \draw[-] (Gestores) -- (mongodb);
+
+  \draw[-] (mysql) -- (security);
+  \draw[-] (security) -- (cluster);
+  \draw[-] (cluster) -- (replication);
+
+  \draw[-] (postgres) -- (performance);
+  \draw[-] (performance) -- (backup);
+  \draw[-] (backup) -- (acid);
+
+  \draw[-] (mongodb) -- (scalability);
+  \draw[-] (scalability) -- (nosql);
+  \draw[-] (nosql) -- (json);
+\end{tikzpicture}
+\end{center}
+
+\end{document}
+

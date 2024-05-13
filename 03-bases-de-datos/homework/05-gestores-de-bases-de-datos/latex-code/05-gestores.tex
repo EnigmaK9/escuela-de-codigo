@@ -1,0 +1,186 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\geometry{landscape} % Set the page orientation to landscape
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows.meta, positioning}
+\usepackage{graphicx} % Required for including images
+\usepackage{fancyhdr} % Required for header and footer management
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+
+\begin{document}
+
+
+\begin{titlepage}
+  \centering
+  \vspace*{1cm}
+  \Huge\textbf{Curso de base de datos entre semana G0224}
+  
+  \vspace{0.5cm}
+  \LARGE Escuela de Código PILARES
+  
+  \vspace{1.5cm}
+  \textbf{Carlos Ignacio Padilla Herrera}
+  
+  \vspace{2cm}
+  \Large\textbf{Folio:} 794DR02
+  
+  \vspace{0.5cm}
+  \Large\textbf{Práctica 5:} Gestores de bases de datos
+  
+  \vfill
+  
+  \Large\textbf{Fecha:} 12 de mayo de 2024
+  
+  \vspace{0.8cm}
+\end{titlepage}
+
+\newpage % Start a new page for the conceptual map
+
+\section{Mapa Conceptual}
+
+\begin{center}
+\begin{tikzpicture}[node distance=0.5cm, auto] % Adjusted node distance for better spacing
+  \node (Gestores) [rectangle, draw=blue, thick, fill=blue!30, text width=5em, text centered, minimum height=3em] {Managers};
+
+  % Database management nodes with increased spacing
+  \node (mysql) [rectangle, draw=violet, thick, fill=violet!30, below left=5cm and 5cm of Gestores, text width=5em, text centered, minimum height=3em] {MySQL};
+  \node (postgres) [rectangle, draw=olive, thick, fill=olive!30, below left=5cm and 2.5cm of Gestores, text width=5em, text centered, minimum height=3em] {PostgreSQL};
+  \node (mongodb) [rectangle, draw=teal, thick, fill=teal!30, below=5cm of Gestores, text width=5em, text centered, minimum height=3em] {MongoDB};
+  \node (oracle) [rectangle, draw=red, thick, fill=red!30, below right=5cm and 2.5cm of Gestores, text width=5em, text centered, minimum height=3em] {Oracle};
+  \node (sqlserver) [rectangle, draw=black, thick, fill=gray!30, below right=5cm and 5cm of Gestores, text width=5em, text centered, minimum height=3em] {SQL Server};
+
+  % Child nodes for MySQL
+  \node (security) [rectangle, draw=red, thick, fill=red!30, below=of mysql, text width=5em, text centered, minimum height=3em, align=center] {Seguridad\\Integración de sistemas};
+  \node (cluster) [rectangle, draw=orange, thick, fill=orange!30, below=of security, text width=6em, text centered, minimum height=3em, align=center] {Cluster\\Herramientas de administración};
+  \node (replication) [rectangle, draw=pink, thick, fill=pink!30, below=of cluster, text width=5em, text centered, minimum height=3em, align=center] {Replicación\\Estrategias};
+
+  % Child nodes for PostgreSQL
+  \node (performance) [rectangle, draw=cyan, thick, fill=cyan!30, below=of postgres, text width=5em, text centered, minimum height=3em, align=center] {Mejoras en \\desempeño};
+  \node (backup) [rectangle, draw=purple, thick, fill=purple!30, below=of performance, text width=5em, text centered, minimum height=3em, align=center] {Soluciones de \\respaldo};
+  \node (acid) [rectangle, draw=lime, thick, fill=lime!30, below=of backup, text width=6em, text centered, minimum height=3em, align=center] {Cumplimiento con\\ACID};
+
+  % Child nodes for MongoDB
+  \node (scalability) [rectangle, draw=maroon, thick, fill=maroon!30, below=of mongodb, text width=6em, text centered, minimum height=3em, align=center] {Carácteristicas de\\Escalabilidad};
+  \node (nosql) [rectangle, draw=gray, thick, fill=gray!30, below=of scalability, text width=5em, text centered, minimum height=3em, align=center] {Modelos de datos\\NoSQL};
+  \node (performanceM) [rectangle, draw=green, thick, fill=green!30, below=of nosql, text width=5em, text centered, minimum height=3em, align=center] {Monitoreo de \\desempeño};
+
+  % Child nodes for Oracle
+  \node (transaction) [rectangle, draw=orange, thick, fill=orange!30, below=of oracle, text width=6em, text centered, minimum height=3em, align=center] {Control de \\Transacciones};
+  \node (enterprise) [rectangle, draw=pink, thick, fill=pink!30, below=of transaction, text width=6em, text centered, minimum height=3em, align=center] {Carácteristicas\\Empresariales};
+  \node (cloud) [rectangle, draw=blue, thick, fill=blue!30, below=of enterprise, text width=5em, text centered, minimum height=3em, align=center] {Integración con \\Nube};
+
+  % Child nodes for SQL Server
+  \node (integration) [rectangle, draw=cyan, thick, fill=cyan!30, below=of sqlserver, text width=5em, text centered, minimum height=3em, align=center] {Servicios de \\Integración};
+  \node (analytics) [rectangle, draw=purple, thick, fill=purple!30, below=of integration, text width=5em, text centered, minimum height=3em, align=center] {Análitica de \\Negocios};
+  \node (securityS) [rectangle, draw=orange, thick, fill=orange!30, below=of analytics, text width=6em, text centered, minimum height=3em, align=center] {Carácteristicas de \\seguridad};
+
+  % Images adjusted to not overlap with the last node
+  \node (mysqlimg) [below=of replication, text width=5em, text centered, yshift=-1cm] {\includegraphics[width=1cm]{mysql.png}};
+  \node (postgresimg) [below=of acid, text width=5em, text centered, yshift=-1cm] {\includegraphics[width=1cm]{postgresql.png}};
+  \node (mongodbimg) [below=of performanceM, text width=5em, text centered, yshift=-1cm] {\includegraphics[width=1cm]{mongodb.png}};
+  \node (oracleimg) [below=of cloud, text width=5em, text centered, yshift=-1cm] {\includegraphics[width=1cm]{oracle.png}};
+  \node (sqlserverimg) [below=of securityS, text width=5em, text centered, yshift=-1cm] {\includegraphics[width=1cm]{sqlserver.png}};
+
+  % Paths
+  \draw[-] (Gestores) -- (mysql);
+  \draw[-] (Gestores) -- (postgres);
+  \draw[-] (Gestores) -- (mongodb);
+  \draw[-] (Gestores) -- (oracle);
+  \draw[-] (Gestores) -- (sqlserver);
+
+  \draw[-] (mysql) -- (security);
+  \draw[-] (security) -- (cluster);
+  \draw[-] (cluster) -- (replication);
+
+  \draw[-] (postgres) -- (performance);
+  \draw[-] (performance) -- (backup);
+  \draw[-] (backup) -- (acid);
+
+  \draw[-] (mongodb) -- (scalability);
+  \draw[-] (scalability) -- (nosql);
+  \draw[-] (nosql) -- (performanceM);
+
+  \draw[-] (oracle) -- (transaction);
+  \draw[-] (transaction) -- (enterprise);
+  \draw[-] (enterprise) -- (cloud);
+
+  \draw[-] (sqlserver) -- (integration);
+  \draw[-] (integration) -- (analytics);
+  \draw[-] (analytics) -- (securityS);
+\end{tikzpicture}
+\end{center}
+
+\newpage
+
+\section{Descripción de Gestores de Bases de Datos}
+
+\subsection{MySQL}
+\textbf{Ventajas:}
+\begin{itemize}
+  \item Ampliamente utilizado en la industria, especialmente en aplicaciones web.
+  \item Soporte robusto y una gran comunidad de usuarios.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+  \item Escalabilidad vertical más que horizontal, puede ser un limitante en sistemas de gran tamaño.
+  \item No es ideal para aplicaciones que requieren manejo extensivo de grandes datos no estructurados.
+\end{itemize}
+
+\subsection{PostgreSQL}
+\textbf{Ventajas:}
+\begin{itemize}
+  \item Soporta un mayor volumen de tipos de datos que otros gestores de bases de datos SQL.
+  \item Extensible, permite a los desarrolladores crear y usar sus propias funciones.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+  \item Puede ser más complejo de administrar debido a su configuración y opciones avanzadas.
+  \item Potencialmente menor rendimiento con cargas de trabajo muy grandes en comparación con algunas bases de datos NoSQL.
+\end{itemize}
+
+\subsection{MongoDB}
+\textbf{Ventajas:}
+\begin{itemize}
+  \item Esquema de datos flexible, ideal para datos no estructurados y variados.
+  \item Escalabilidad horizontal, facilita la distribución de datos en varios servidores.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+  \item La consistencia eventual puede ser un problema para aplicaciones que requieren alta consistencia en tiempo real.
+  \item Gestión de transacciones más compleja en comparación con los sistemas SQL tradicionales.
+\end{itemize}
+
+\subsection{Oracle}
+\textbf{Ventajas:}
+\begin{itemize}
+  \item Alta durabilidad y rendimiento para aplicaciones empresariales críticas.
+  \item Amplias características de seguridad y cumplimiento.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+  \item Alto costo de licencias y mantenimiento.
+  \item Complejidad en la configuración y la gestión para usuarios menos experimentados.
+\end{itemize}
+
+\subsection{SQL Server}
+\textbf{Ventajas:}
+\begin{itemize}
+  \item Integración profunda con herramientas de Microsoft, ideal para entornos que utilizan otras tecnologías de Microsoft.
+  \item Potentes herramientas de análisis y reporting integradas.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+  \item Costo elevado comparado con soluciones de código abierto.
+  \item Menor flexibilidad en comparación con bases de datos de código abierto.
+\end{itemize}
+
+\end{document}
+

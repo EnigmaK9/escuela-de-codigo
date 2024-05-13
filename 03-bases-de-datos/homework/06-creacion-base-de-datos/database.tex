@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{hyperref}
 \usepackage{geometry}
 \geometry{a4paper} % Set the page size to A4
 \usepackage{listings} % Package for including code in the document
@@ -19,7 +20,7 @@
 \maketitle
 
 \section*{Información del Taller}
-\textbf{Taller:} Escuela de código PILARES: Base de datos entre semana \\
+\textbf{Taller:} Base de Datos Entre semana G0224 \\
 \textbf{Número de la práctica:} 6 \\
 \textbf{Nombre completo:} Padilla Herrera Carlos Ignacio \\
 \textbf{Folio:} 794DR02 \\
@@ -66,9 +67,9 @@ insert into product (code, name, price, manufacturer_code) values
 (5, 'GeForce GTX 1080 Xtreme', 755, 6),
 (6, 'Monitor 24 LED Full HD', 202, 1),
 (7, 'Monitor 27 LED Full HD', 245.99, 1),
-(8, 'Portátil Yoga 520', 559, 2),
-(9, 'Portátil Ideapad 320', 444, 2),
-(10, 'Impresora HP Deskjet 3720, 59.99, 3)
+(8, 'Portatil Yoga 520', 559, 2),
+(9, 'Portatil Ideapad 320', 444, 2),
+(10, 'Impresora HP Deskjet 3720', 59.99, 3),
 (11, 'Impresora HP Laserjet Pro M26nw', 180, 3);
 \end{lstlisting}
 
@@ -76,10 +77,12 @@ insert into product (code, name, price, manufacturer_code) values
 
 \section*{Captura de pantalla}
 
-\begin{figure}[h!]
+\begin{figure}[ht]
     \centering
-    \includegraphics[width=\linewidth]{screenshot.png} % Asegúrate de poner el nombre correcto del archivo y la extensión
-    \caption{Captura de pantalla de DB Fiddle}
+    \href{https://www.db-fiddle.com/f/nF3pqUTYuEuymCCpV78uN/1}{
+        \includegraphics[width=\linewidth]{screenshot.png} % Asegúrate de que el nombre del archivo y la extensión son correctos
+    }
+    \caption{Captura de pantalla que te dirige a DB Fiddle con el código si le das click.}
 \end{figure}
 
 

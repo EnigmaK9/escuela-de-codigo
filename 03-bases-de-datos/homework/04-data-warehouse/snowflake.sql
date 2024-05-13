@@ -1,60 +1,77 @@
 -- creación de la dimensión almacén
-create table dimensión_almacén (
-    idalmacén integer primary key,
+create table dimension_almacén (
+    almacen_id integer primary key,
     nombre varchar(100),
-    dirección varchar(100),
-    c_p integer,
+    direccion varchar(100),
+    codigo_postal integer,
     localidad varchar(50),
     provincia varchar(50)
 );
 
 -- creación de la dimensión producto
-create table dimensión_producto (
-    idproducto integer primary key,
+create table dimension_producto (
+    producto_id integer primary key,
     nombre varchar(100),
-    categoría varchar(50),
-    subcategoría varchar(50),
+    categoria varchar(50),
+    subcategoria varchar(50),
     marca varchar(50),
     precio double,
     altura double
 );
 
 -- creación de la dimensión marca
-create table dimensión_marca (
-    idmarca integer primary key,
-    marca varchar(50),
-    nombremarca varchar(50)
+create table dimension_marca (
+    marca_id integer primary key,
+    nombre_marca varchar(50)
 );
 
 -- creación de la dimensión tiempo
-create table dimensión_tiempo (
-    idtiempo integer primary key,
+create table dimension_tiempo (
+    tiempo_id integer primary key,
     fecha date,
-    año integer,
+    year integer,
     trimestre varchar(10),
     mes varchar(20),
     semana varchar(20),
-    diasemana varchar(20)
+    dia_semana varchar(20)
 );
 
 -- creación de la dimensión cliente
-create table dimensión_cliente (
-    idcliente integer primary key,
+create table dimension_cliente (
+    cliente_id integer primary key,
     nombre varchar(100),
     sexo varchar(10),
     edad integer,
     fecha_registro date
 );
 
+-- creación de la tabla dimensión promoción
+create table dimension_promocion (
+    promocion_id integer primary key,
+    nombre varchar(100),
+    tipo,
+    costo,
+    inicio,
+    fin,
+    tipo_id,
+    foreign key (tipo_id) references dimension_tipo(tipo_id)
+)
+-- creación de la tabla de dimensión tipo
+create table dimension_tipo (
+    tipo_id integer primary key,
+    fecha date,
+    condiciones varchar(100)
+)
+
 -- creación de la tabla de hechos ventas
 create table hechos_ventas (
-    idventas integer primary key,
-    idproducto integer,
-    idtiempo integer,
-    idcliente integer,
-    cantidad integer,
+    ventas_id integer primary key,
+    producto_id integer,
+    tiempo_id integer,
+    cliente_id integer,
+    unidades integer,
     precio double,
-    foreign key (idproducto) references dimensión_producto(idproducto),
-    foreign key (idtiempo) references dimensión_tiempo(idtiempo),
-    foreign key (idcliente) references dimensión_cliente(idcliente)
+    foreign key (producto_id) references dimension_producto(producto_id),
+    foreign key (tiempo_id) references dimension_tiempo(tiempo_id),
+    foreign key (cliente_id) references dimension_cliente(cliente_id)
 );

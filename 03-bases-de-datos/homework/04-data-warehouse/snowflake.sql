@@ -8,6 +8,12 @@ create table dimension_almacen (
     provincia varchar(50)
 );
 
+-- creación de la dimensión marca
+create table dimension_marca (
+    marca_id integer primary key,
+    nombre_marca varchar(50)
+);
+
 -- creación de la dimensión producto
 create table dimension_producto (
     producto_id integer primary key,
@@ -19,12 +25,6 @@ create table dimension_producto (
     altura double precision,
     marca_id integer,
     foreign key (marca_id) references dimension_marca(marca_id)
-);
-
--- creación de la dimensión marca
-create table dimension_marca (
-    marca_id integer primary key,
-    nombre_marca varchar(50)
 );
 
 -- creación de la dimensión tiempo

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="MariaDb" id="MariaDb-1909" database="MariaDb" >
+	<schema name="snowflake" >
+		<table name="dimension_almacen" row_count="0" spec="" >
+			<column name="almacen_id" type="INT" length="11" jt="4" mandatory="y" />
+			<column name="nombre" type="VARCHAR" length="100" jt="12" />
+			<column name="direccion" type="VARCHAR" length="100" jt="12" />
+			<column name="codigo_postal" type="INT" length="11" jt="4" />
+			<column name="localidad" type="VARCHAR" length="50" jt="12" />
+			<column name="provincia" type="VARCHAR" length="50" jt="12" />
+			<index name="pk_dimension_almacen" unique="PRIMARY_KEY" >
+				<column name="almacen_id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci]]></options>
+		</table>
+		<table name="dimension_cliente" row_count="0" spec="" >
+			<column name="cliente_id" type="INT" length="11" jt="4" mandatory="y" />
+			<column name="nombre" type="VARCHAR" length="100" jt="12" />
+			<column name="sexo" type="VARCHAR" length="10" jt="12" />
+			<column name="edad" type="INT" length="11" jt="4" />
+			<column name="fecha_registro" type="DATE" jt="91" />
+			<index name="pk_dimension_cliente" unique="PRIMARY_KEY" >
+				<column name="cliente_id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci]]></options>
+		</table>
+		<table name="dimension_marca" row_count="0" spec="" >
+			<column name="marca_id" type="INT" length="11" jt="4" mandatory="y" />
+			<column name="nombre_marca" type="VARCHAR" length="50" jt="12" />
+			<index name="pk_dimension_marca" unique="PRIMARY_KEY" >
+				<column name="marca_id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci]]></options>
+		</table>
+		<table name="dimension_producto" row_count="0" spec="" >
+			<column name="producto_id" type="INT" length="11" jt="4" mandatory="y" />
+			<column name="nombre" type="VARCHAR" length="100" jt="12" />
+			<column name="categoria" type="VARCHAR" length="50" jt="12" />
+			<column name="subcategoria" type="VARCHAR" length="50" jt="12" />
+			<column name="marca" type="VARCHAR" length="50" jt="12" />
+			<column name="precio" type="DOUBLE" jt="8" />
+			<column name="altura" type="DOUBLE" jt="8" />
+			<column name="marca_id" type="INT" length="11" jt="4" />
+			<index name="pk_dimension_producto" unique="PRIMARY_KEY" >
+				<column name="producto_id" />
+			</index>
+			<index name="marca_id" unique="NORMAL" >
+				<column name="marca_id" />
+			</index>
+			<fk name="dimension_producto_ibfk_1" to_schema="snowflake" to_table="dimension_marca" options="" >
+				<fk_column name="marca_id" pk="marca_id" />
+			</fk>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci]]></options>
+		</table>
+		<table name="dimension_promocion" row_count="0" spec="" >
+			<column name="promocion_id" type="INT" length="11" jt="4" mandatory="y" />
+			<column name="nombre" type="VARCHAR" length="100" jt="12" />
+			<column name="tipo" type="VARCHAR" length="50" jt="12" />
+			<column name="costo" type="DOUBLE" jt="8" />
+			<column name="inicio" type="DATE" jt="91" />
+			<column name="fin" type="DATE" jt="91" />
+			<column name="tipo_id" type="INT" length="11" jt="4" />
+			<index name="pk_dimension_promocion" unique="PRIMARY_KEY" >
+				<column name="promocion_id" />
+			</index>
+			<index name="tipo_id" unique="NORMAL" >
+				<column name="tipo_id" />
+			</index>
+			<fk name="dimension_promocion_ibfk_1" to_schema="snowflake" to_table="dimension_tipo" options="" >
+				<fk_column name="tipo_id" pk="tipo_id" />
+			</fk>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci]]></options>
+		</table>
+		<table name="dimension_tiempo" row_count="0" spec="" >
+			<column name="tiempo_id" type="INT" length="11" jt="4" mandatory="y" />
+			<column name="fecha" type="DATE" jt="91" />
+			<column name="anio" type="INT" length="11" jt="4" />
+			<column name="trimestre" type="VARCHAR" length="10" jt="12" />
+			<column name="mes" type="VARCHAR" length="20" jt="12" />
+			<column name="semana" type="VARCHAR" length="20" jt="12" />
+			<column name="dia_semana" type="VARCHAR" length="20" jt="12" />
+			<index name="pk_dimension_tiempo" unique="PRIMARY_KEY" >
+				<column name="tiempo_id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci]]></options>
+		</table>
+		<table name="dimension_tipo" row_count="0" spec="" >
+			<column name="tipo_id" type="INT" length="11" jt="4" mandatory="y" />
+			<column name="descripcion" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_dimension_tipo" unique="PRIMARY_KEY" >
+				<column name="tipo_id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci]]></options>
+		</table>
+		<table name="hechos_ventas" row_count="0" spec="" >
+			<column name="ventas_id" type="INT" length="11" jt="4" mandatory="y" />
+			<column name="producto_id" type="INT" length="11" jt="4" />
+			<column name="almacen_id" type="INT" length="11" jt="4" />
+			<column name="tiempo_id" type="INT" length="11" jt="4" />
+			<column name="cliente_id" type="INT" length="11" jt="4" />
+			<column name="promocion_id" type="INT" length="11" jt="4" />
+			<column name="unidades" type="INT" length="11" jt="4" />
+			<column name="precio" type="DOUBLE" jt="8" />
+			<index name="pk_hechos_ventas" unique="PRIMARY_KEY" >
+				<column name="ventas_id" />
+			</index>
+			<index name="producto_id" unique="NORMAL" >
+				<column name="producto_id" />
+			</index>
+			<index name="almacen_id" unique="NORMAL" >
+				<column name="almacen_id" />
+			</index>
+			<index name="tiempo_id" unique="NORMAL" >
+				<column name="tiempo_id" />
+			</index>
+			<index name="cliente_id" unique="NORMAL" >
+				<column name="cliente_id" />
+			</index>
+			<index name="promocion_id" unique="NORMAL" >
+				<column name="promocion_id" />
+			</index>
+			<fk name="hechos_ventas_ibfk_1" to_schema="snowflake" to_table="dimension_producto" options="" >
+				<fk_column name="producto_id" pk="producto_id" />
+			</fk>
+			<fk name="hechos_ventas_ibfk_2" to_schema="snowflake" to_table="dimension_almacen" options="" >
+				<fk_column name="almacen_id" pk="almacen_id" />
+			</fk>
+			<fk name="hechos_ventas_ibfk_3" to_schema="snowflake" to_table="dimension_tiempo" options="" >
+				<fk_column name="tiempo_id" pk="tiempo_id" />
+			</fk>
+			<fk name="hechos_ventas_ibfk_4" to_schema="snowflake" to_table="dimension_cliente" options="" >
+				<fk_column name="cliente_id" pk="cliente_id" />
+			</fk>
+			<fk name="hechos_ventas_ibfk_5" to_schema="snowflake" to_table="dimension_promocion" options="" >
+				<fk_column name="promocion_id" pk="promocion_id" />
+			</fk>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci]]></options>
+		</table>
+	</schema>
+	<layout name="Main Layout" id="Layout-1772" show_relation="columns" >
+		<entity schema="snowflake" name="dimension_almacen" color="BED3F4" x="272" y="578" />
+		<entity schema="snowflake" name="dimension_cliente" color="BED3F4" x="51" y="85" />
+		<entity schema="snowflake" name="dimension_marca" color="BED3F4" x="765" y="306" />
+		<entity schema="snowflake" name="dimension_producto" color="BED3F4" x="510" y="306" />
+		<entity schema="snowflake" name="dimension_promocion" color="BED3F4" x="510" y="578" />
+		<entity schema="snowflake" name="dimension_tiempo" color="BED3F4" x="51" y="323" />
+		<entity schema="snowflake" name="dimension_tipo" color="BED3F4" x="765" y="578" />
+		<entity schema="snowflake" name="hechos_ventas" color="BED3F4" x="289" y="306" />
+		<group name="hechos_ventas" color="ECF0F7" >
+			<entity schema="snowflake" name="hechos_ventas" />
+			<entity schema="snowflake" name="dimension_producto" />
+			<entity schema="snowflake" name="dimension_promocion" />
+			<entity schema="snowflake" name="dimension_almacen" />
+			<entity schema="snowflake" name="dimension_tiempo" />
+			<entity schema="snowflake" name="dimension_tipo" />
+			<entity schema="snowflake" name="dimension_cliente" />
+			<entity schema="snowflake" name="dimension_marca" />
+		</group>
+	</layout>
+	<layout name="~Layout with Sample Tools" id="Layout-80f" show_column_type="y" show_relation="columns" >
+		<entity schema="snowflake" name="dimension_almacen" color="BED3F4" x="255" y="561" />
+		<entity schema="snowflake" name="dimension_cliente" color="BED3F4" x="68" y="51" />
+		<entity schema="snowflake" name="dimension_marca" color="BED3F4" x="986" y="255" />
+		<entity schema="snowflake" name="dimension_producto" color="BED3F4" x="663" y="255" />
+		<entity schema="snowflake" name="dimension_promocion" color="BED3F4" x="612" y="527" />
+		<entity schema="snowflake" name="dimension_tiempo" color="BED3F4" x="51" y="272" />
+		<entity schema="snowflake" name="dimension_tipo" color="BED3F4" x="901" y="527" />
+		<entity schema="snowflake" name="hechos_ventas" color="BED3F4" x="357" y="255" />
+		<script name="SQL Editor" id="Editor-16cb" language="SQL" >
+			<string><![CDATA[SELECT
+	ventas_id, producto_id, almacen_id, tiempo_id, cliente_id, promocion_id, unidades, precio
+FROM
+	snowflake.hechos_ventas s;]]></string>
+		</script>
+		<browser id="Browse-559" name="Relational Data Explorer" confirm_updates="y" >
+			<browse_table schema="snowflake" entity="hechos_ventas" x="20" y="20" width="270" height="-60" >
+				<browse_table schema="snowflake" entity="dimension_producto" fk="hechos_ventas_ibfk_1" x="310" y="20" width="500" height="350" record_view="y" >
+					<browse_table schema="snowflake" entity="dimension_marca" fk="dimension_producto_ibfk_1" x="830" y="20" width="500" height="350" record_view="y" />
+				</browse_table>
+			</browse_table>
+		</browser>
+		<query id="Query-142c" name="Query Builder" >
+			<query_table schema="snowflake" name="hechos_ventas" alias="hv" x="51" y="51" >
+				<column name="ventas_id" />
+				<column name="producto_id" />
+				<column name="almacen_id" />
+				<column name="tiempo_id" />
+				<column name="cliente_id" />
+				<column name="promocion_id" />
+				<column name="unidades" />
+				<column name="precio" />
+				<query_table schema="snowflake" name="dimension_producto" alias="dp" x="289" y="51" fk="hechos_ventas_ibfk_1" type="Inner Join" >
+					<column name="producto_id" />
+					<column name="nombre" />
+					<column name="categoria" />
+					<column name="subcategoria" />
+					<column name="marca" />
+					<column name="precio" />
+					<column name="altura" />
+					<column name="marca_id" />
+					<query_table schema="snowflake" name="dimension_marca" alias="dm" x="561" y="51" fk="dimension_producto_ibfk_1" type="Inner Join" >
+						<column name="marca_id" />
+						<column name="nombre_marca" />
+					</query_table>
+				</query_table>
+			</query_table>
+		</query>
+		<form name="Report" id="Report-103d" template="Page" css="container-fluid" view="frame" >
+			<var name="samplePageNumber" type="4" value="0" mandatory="n" />
+			<var name="sampleRecordsPerPage" type="4" value="100" mandatory="n" />
+			<body name="Body" template="Grid" max_records="100" pos="0,0,0,0,f,f" layout="{{-2,-2,-2,-2,-1},{-2,-2,-2,-2}}" generate_path="y" scroll="n" html="n" header_rows="0" footer_rows="0" >
+				<cell type="label" name="Hechos_ventas Data" template="H3" pos="0,0,1,0,l,c" />
+				<cell type="chart" name="Pie" template="Pie" pos="0,1,4,1,l,c" max_records="20" generate_path="y" >
+					<form_script type="DataSource" language="SQL" >
+						<var name="ventas_id" type="4" />
+						<var name="producto_id" type="4" />
+						<var name="almacen_id" type="4" />
+						<var name="tiempo_id" type="4" />
+						<var name="cliente_id" type="4" />
+						<var name="promocion_id" type="4" />
+						<var name="unidades" type="4" />
+						<var name="precio" type="8" />
+						<script ><![CDATA[SELECT * FROM snowflake.hechos_ventas]]></script>
+					</form_script>
+					<param name="width" value="100%" />
+					<param name="title" value="Sample Chart" />
+					<param name="value" value="ventas_id" />
+					<param name="height" value="400px" />
+				</cell>
+				<tableview name="sample" template="Table" max_records="100" css="sortable table table-striped table-sm table-hover" pos="0,2,4,2,f,f" layout="{{-2,-2,-2,-2,-2,-2,-2,-2,-2},{-2,-2}}" generate_path="y" scroll="n" html="n" header_rows="1" footer_rows="0" >
+					<form_script type="DataSource" language="SQL" >
+						<var name="ventas_id" type="4" />
+						<var name="producto_id" type="4" />
+						<var name="almacen_id" type="4" />
+						<var name="tiempo_id" type="4" />
+						<var name="cliente_id" type="4" />
+						<var name="promocion_id" type="4" />
+						<var name="unidades" type="4" />
+						<var name="precio" type="8" />
+						<script ><![CDATA[SELECT * FROM snowflake.hechos_ventas]]></script>
+					</form_script>
+					<cell type="label" name="ventas_id" pos="0,0,0,0,c,c" />
+					<cell type="label" name="producto_id" pos="1,0,1,0,c,c" />
+					<cell type="label" name="almacen_id" pos="2,0,2,0,c,c" />
+					<cell type="label" name="tiempo_id" pos="3,0,3,0,c,c" />
+					<cell type="label" name="cliente_id" pos="4,0,4,0,c,c" />
+					<cell type="label" name="promocion_id" pos="5,0,5,0,c,c" />
+					<cell type="label" name="unidades" pos="6,0,6,0,c,c" />
+					<cell type="label" name="precio" pos="7,0,7,0,c,c" />
+					<cell type="label" name="${ventas_id}" template="Plain" pos="0,1,0,1,l,c" />
+					<cell type="label" name="${producto_id}" template="Plain" pos="1,1,1,1,l,c" />
+					<cell type="label" name="${almacen_id}" template="Plain" pos="2,1,2,1,l,c" />
+					<cell type="label" name="${tiempo_id}" template="Plain" pos="3,1,3,1,l,c" />
+					<cell type="label" name="${cliente_id}" template="Plain" pos="4,1,4,1,l,c" />
+					<cell type="label" name="${promocion_id}" template="Plain" pos="5,1,5,1,l,c" />
+					<cell type="label" name="${unidades}" template="Plain" pos="6,1,6,1,l,c" />
+					<cell type="label" name="${precio}" template="Plain" pos="7,1,7,1,l,c" />
+					<cell type="button" name="More" template="Plain" css="btn btn-sm btn-secondary" pos="8,1,8,1,c,c" ref_id="Report-103d" />
+				</tableview>
+				<cell type="href" name="" disabled="${samplePageNumber&lt;1}" pos="0,3,0,3,l,c" glyph="bi-chevron_double_left" ref_id="Report-103d" >
+					<var name="samplePageNumber" value="0" />
+				</cell>
+				<cell type="href" name="" disabled="${samplePageNumber&lt;1}" pos="1,3,1,3,l,c" glyph="bi-chevron_left" ref_id="Report-103d" >
+					<var name="samplePageNumber" value="${Math.max(0,samplePageNumber-1)}" />
+				</cell>
+				<cell type="label" name="Page ${samplePageNumber+1}" pos="2,3,2,3,l,c" />
+				<cell type="href" name="" disabled="${!sampleHasNextPage}" pos="3,3,3,3,l,c" glyph="bi-chevron_right" ref_id="Report-103d" >
+					<var name="samplePageNumber" value="${( samplePageNumber+1 )}" />
+				</cell>
+			</body>
+		</form>
+	</layout>
+</project>

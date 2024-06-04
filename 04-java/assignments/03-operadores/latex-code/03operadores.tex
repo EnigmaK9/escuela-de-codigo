@@ -1,0 +1,175 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{pdflscape}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{multicol}
+\usepackage{anyfontsize}
+\usepackage{tcolorbox} % Required for the border around the entire document
+
+% Header and Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO,LE]{\textbf{Escuela de código PILARES}}
+\fancyfoot[LO,CE]{Carlos Ignacio Padilla Herrera}
+\fancyfoot[RO,RE]{\thepage}
+
+% Listings settings
+\lstset{
+    basicstyle=\fontsize{8}{11}\selectfont\ttfamily,
+    breaklines=true,
+    captionpos=b,
+    numbers=left,
+    numberstyle=\tiny,
+    stepnumber=1,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    columns=fullflexible,
+    frame=single, % Add a frame around the code
+}
+
+% Title Page
+\title{03. Operadores}
+\author{Carlos Ignacio Padilla Herrera}
+\date{03 de junio de 2024}
+
+\begin{document}
+
+% Add a border around the entire document
+\tcbset{
+    colframe=black, % Frame color
+    colback=white, % Background color
+    width=\textwidth, % Box width
+    enlarge left by=\dimexpr\hoffset+\oddsidemargin+1in\relax,
+    enlarge right by=\dimexpr\hoffset+\oddsidemargin+1in\relax,
+    top=0pt, bottom=0pt, left=0pt, right=0pt, % Margins inside the box
+    boxrule=1pt, % Border thickness
+}
+
+\tcbstartrecording
+
+% Cover Page
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+
+    \Huge
+    \textbf{03. Operadores}
+
+    \vspace{1.5cm}
+
+    \LARGE
+    \textbf{Padilla Herrera Carlos Ignacio}
+
+    \vspace{0.5cm}
+
+    \Large
+    \textbf{Folio: 794DR03}
+
+    \vspace{1.5cm}
+
+    \LARGE
+    \textbf{Escuela de Código PILARES}
+
+
+    \LARGE
+    \textbf{Java Entre Semana G0224}
+
+    \vspace{0.5cm}
+
+    \Large
+    Fecha: 03 de junio de 2024
+
+    \vfill
+\end{titlepage}
+
+\maketitle
+
+\section*{03. Operadores}
+\textbf{Objetivo:} Verificar el dominio teórico y técnico de los principios básicos de operadores en Java mediante preguntas de opción múltiple y ejercicios para desarrollar su código.
+
+\textbf{Indicaciones:} Realiza los programas que se te solicitan, una vez realizado sube el archivo de tu actividad.
+
+\section*{Actividades}
+
+\subsection*{Programa 1. (2 puntos)}
+Supón que intentamos construir algunas de las funciones de una cuenta bancaria. Considera el siguiente código:
+
+\begin{lstlisting}[language=Java, caption={Código base del programa CuentaBancaria.java}]
+public class CuentaBancaria {
+
+    public static void main(String[] args){
+        double saldo = 1000.75;
+        double cantidadARetirar = 250;
+    }
+}
+\end{lstlisting}
+
+\begin{itemize}
+    \item Crea una nueva variable double llamada \textit{saldoActualizado} y almacene \textit{saldo} con \textit{cantidadARetirar} restada de él.
+    \item Ahora, imagina que has decidido dividir tu saldo en 3 partes iguales para dárselo a tus tres mejores amigos. Crea una variable double llamada \textit{cantidadParaCadaAmigo} que contenga \textit{saldoActualizado} dividido por 3.
+    \item Si cada uno de tus amigos quiere comprar un boleto para un concierto con el dinero que les diste y las entradas cuestan 250, crea una variable de tipo boolean llamado \textit{puedeComprarTicket} y configúralo de tal manera que arroje si \textit{cantidadParaCadaAmigo} tiene lo suficiente para comprar una entrada para el concierto.
+    \item Usa \textit{System.out.println()} para imprimir \textit{puedeComprarTicket}.
+    \item Usa \textit{+} y \textit{System.out.println()} para imprimir con el valor de \textit{cantidadParaCadaAmigo} en lugar de \textit{<cantidadParaCadaAmigo>}. Le di a cada amigo \textit{<cantidadParaCadaAmigo>}...
+    \item Toma captura de pantalla del código completo y del programa compilado.
+\end{itemize}
+
+\begin{lstlisting}[language=Java, caption={Código del programa CuentaBancaria.java}]
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.cuentabancaria;
+
+/**
+ *
+ * @author enigma
+ */
+public class CuentaBancaria {
+
+    public static void main(String[] args) {
+        // Define el saldo inicial en la cuenta bancaria
+        double saldo = 1000.75;
+
+        // Define la cantidad a retirar de la cuenta bancaria
+        double cantidadARetirar = 250;
+
+        // Calcula el saldo actualizado despues del retiro
+        double saldoActualizado = saldo - cantidadARetirar;
+
+        // Divide el saldo actualizado entre tres amigos
+        double cantidadParaCadaAmigo = saldoActualizado / 3;
+
+        // Verifica si cada amigo puede comprar un ticket de 250
+        boolean puedeComprarTicket = cantidadParaCadaAmigo >= 250;
+
+        // Imprime si cada amigo puede comprar un ticket
+        System.out.println("Puede comprar ticket?: " + puedeComprarTicket);
+
+        // Imprime la cantidad que se le dio a cada amigo
+        System.out.println("Le di a cada amigo " + cantidadParaCadaAmigo + "...");
+    }
+}
+
+
+\end{lstlisting}
+
+\newpage
+
+\begin{landscape}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=\linewidth]{img/cuentaBancaria.png}
+        \caption{Captura del programa CuentaBancaria.java}
+        \label{fig:captura}
+    \end{figure}
+\end{landscape}
+
+\end{document}
+
+\tcbset{record}

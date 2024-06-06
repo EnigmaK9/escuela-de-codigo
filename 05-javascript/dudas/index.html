@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de números aleatorios</title>
+    <script>
+        function generateNumbers() {
+            const num1 = Math.floor(Math.random() * 10) + 1;
+            const num2 = Math.floor(Math.random() * 10) + 1;
+            const suma = num1 + num2;
+            document.getElementById('resultado').textContent = `La suma de ${num1} y ${num2} es ${suma}`;
+        }
+
+        window.onload = generateNumbers;
+    </script>
+</head>
+<body>
+    <p id="resultado"></p>
+</body>
+</html>

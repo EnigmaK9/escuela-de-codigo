@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>assignment: a + 5, a + b, a + 7</title>
+    <title>Assignment: a + 5, a + b, a + 7</title>
 </head>
 <body>
-    <h1>assignment: a + 5, a + b, a + 7</h1>
+    <h1>Assignment: a + 5, a + b, a + 7</h1>
     <script>
         var inputUser = prompt("Type in the value of a: ");
         var inputUser2 = prompt("Type in the value of b: ");
@@ -14,12 +14,13 @@
         var b = parseInt(inputUser2);
         let add_five_to_a = addFive(b);
         let a_plus_seven = sum(a, 7);
-        let suma = sum(a,b);
+        let sum_of_a_plus_b = sum(a,b);
         
         
         alertBox(`The sum of ${a} and 7 is: ${a_plus_seven}`);
         alertBox(`The sum of ${b} + 5 is: ${add_five_to_a}`);
-        alertBox(`The sum of a + b is: ${suma}`);
+        alertBox(`The sum of ${a} + ${b} is: ${sum_of_a_plus_b}`);
+        
         function sum(x, y) {
             return x + y;
         }

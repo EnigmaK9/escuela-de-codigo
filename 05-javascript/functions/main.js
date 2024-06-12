@@ -1,5 +1,7 @@
+alertBox("Program that calculates the sum of a + 7, b + 5 and a + b. =)")
 var inputUser = prompt("Type in the value of a: ");
 var inputUser2 = prompt("Type in the value of b: ");
+
 var a = parseInt(inputUser);
 var b = parseInt(inputUser2);
 let add_five_to_a = addFive(b);
